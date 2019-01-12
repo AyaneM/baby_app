@@ -7,4 +7,7 @@ class HomePagesController < ApplicationController
 
   def help
   end
+  
+  def contact
+  end
 end
