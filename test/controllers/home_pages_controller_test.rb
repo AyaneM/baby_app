@@ -22,4 +22,9 @@ class HomePagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Baby App"
   end
 
+  test "should get contact" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Baby App"
+  end
 end
