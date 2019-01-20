@@ -11,9 +11,14 @@
     <![endif]-->
   <body>
     <%= render 'layouts/header' %>
+    <!--<%= image_tag("mare.jpg", alt: "Babyapp logo", class: "img-responsive") %>-->
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "aler alert-#{message_type}") %>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
